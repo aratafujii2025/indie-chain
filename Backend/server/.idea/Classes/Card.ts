@@ -45,6 +45,7 @@ type contractRequest = {
 
 export default class Card {
     name?:string;
+    contractId:number;
 
 
     constructor(name?:string,contract?:contractRequest){
