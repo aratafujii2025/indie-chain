@@ -12,42 +12,44 @@ for(let i = 0; i < 10; i++){
     cards.push(new Card(i.toString()))
 }
 
-
+const initDatabase  = async () =>
+{
 // Init our database here, only one will have cards for now
-const suzie :User = new User('suzie','123')
-const frank :User = new User('frank','123')
-const liz :User = new User('liz','123')
-const ted :User = new User('ted','123')
-const elk :User = new User('elk','123')
-elk.updateCards([...cards])
+    const suzie: User = await User.register('suzie', '123')
+    const frank:User = await User.register('frank', '123')
+    const liz: User = await User.register('liz', '123')
+    const ted: User = await User.register('ted', '123')
+    const elk: User = await User.register('elk', '123')
+    elk.updateCards([...cards])
 
 
-const sia :Artist = new Artist('sia','123')
-const taylor: Artist = new Artist('taylor','123')
+    const sia: Artist = await Artist.register('sia', '123')
+    const taylor: Artist = await Artist.register('taylor', '123')
 
 
-users.push(JSON.stringify(suzie))
-users.push(JSON.stringify(frank))
-users.push(JSON.stringify(liz))
-users.push(JSON.stringify(ted))
-users.push(JSON.stringify(elk))
+    users.push(JSON.stringify(suzie))
+    users.push(JSON.stringify(frank))
+    users.push(JSON.stringify(liz))
+    users.push(JSON.stringify(ted))
+    users.push(JSON.stringify(elk))
 
-artists.push(JSON.stringify(sia))
-artists.push(JSON.stringify(taylor))
+    artists.push(JSON.stringify(sia))
+    artists.push(JSON.stringify(taylor))
 
-const jsonCards = JSON.stringify(cards)
+    const jsonCards = JSON.stringify(cards)
 
-export const userDB = {'users':users}
-export const artistDB = {'artists':artists}
+    const userDB = {'users': users}
+    const artistDB = {'artists': artists}
 
-export const cardsDB = {'cards':cards}
+    const cardsDB = {'cards': cards}
 
-fs.writeFileSync('userDB.json',JSON.stringify(userDB))
-fs.writeFileSync('cardsDB.json',JSON.stringify(cardsDB))
-fs.writeFileSync('artistsDB.json',JSON.stringify(artistDB))
+    fs.writeFileSync('userDB.json', JSON.stringify(userDB))
+    fs.writeFileSync('cardsDB.json', JSON.stringify(cardsDB))
+    fs.writeFileSync('artistsDB.json', JSON.stringify(artistDB))
 
+}
 
-
+initDatabase()
 
 
 
