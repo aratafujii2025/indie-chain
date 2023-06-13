@@ -1,17 +1,17 @@
 
 import Card from "./Card";
 const assert = require('assert')
+const bcrypt = require('bcrypt')
 export default class User {
     userName:string;
-    password:string;
+    hash:string;
     cards?:Card[]
 
 
     constructor(userName?,password?,cards?: Card[]){
-        assert(userName != null)
-        assert(password != null)
+        bcrypt.hash(password,10,(err,hash) =>
+        this.hash = hash)
         this.userName = userName
-        this.password = password
         cards? this.cards = cards: this.cards = []
     }
 
@@ -23,3 +23,4 @@ export default class User {
         return Object.assign(new User(),json)
     }
 }
+exports.user = User

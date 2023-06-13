@@ -1,15 +1,21 @@
-const http = require('http')
-const port = 8000
-const host = 'localhost'
+const express = require('express')
+const fs = require('fs')
+import User from './Classes/User'
+let users:User[] = []
 
-//A sample event listener
-const requestListener = function (req, res) {
-    res.writeHead(200);
-    res.end("My first server!");
-};
+const makeUsers = async () => {
+    users = await fs.readFile("Database/userDB.json", 'utf8', (err, data) => {
+        if (err) {
+            throw new Error('file could not be read')
+        }
+        console.log(JSON.parse(data)['users'])
+        return JSON.parse(data)['users'].map((elt) => User.fromJson(JSON.parse(elt)))
+    })
+}
+
+await makeUsers()
 
 
-// This is the syntax for adding event listeners, here requestListener is an event listener.
-const server = http.createServer(requestListener)
 
-server.listen(port,host,()=>{console.log('server is running')})
+
+

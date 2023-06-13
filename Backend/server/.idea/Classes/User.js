@@ -1,12 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var assert = require('assert');
+var bcrypt = require('bcrypt');
 var User = /** @class */ (function () {
     function User(userName, password, cards) {
-        assert(userName != null);
-        assert(password != null);
+        var _this = this;
+        bcrypt.hash(password, 10, function (err, hash) {
+            return _this.hash = hash;
+        });
         this.userName = userName;
-        this.password = password;
         cards ? this.cards = cards : this.cards = [];
     }
     User.prototype.updateCards = function (cards) {
@@ -18,3 +20,4 @@ var User = /** @class */ (function () {
     return User;
 }());
 exports.default = User;
+exports.user = User;

@@ -62,7 +62,6 @@ export default class Card {
     }
 
     static makeNft(contract){
-        axios(config(contract,id)).then((success) => console.log('success')).catch(() => {console.log('error')})
     }
 
     static fromJson(json:Object) {
