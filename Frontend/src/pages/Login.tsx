@@ -1,5 +1,5 @@
 function Login() {
-    // go crazy!
+    // make a branch called Login before you start developing
 
 
     return (
