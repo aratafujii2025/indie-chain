@@ -9,10 +9,9 @@ export default class User {
 
 
     constructor(userName?,password?,cards?: Card[]){
-        bcrypt.hash(password,10,(err,hash) =>
-        this.hash = hash)
         this.userName = userName
-        cards? this.cards = cards: this.cards = []
+        this.hash = password
+        this.cards = cards
     }
 
     updateCards(cards:Card[]){
@@ -21,6 +20,10 @@ export default class User {
 
     static fromJson(json:Object) {
         return Object.assign(new User(),json)
+    }
+    static async register(userName,password,cards?){
+        const hash = await bcrypt.hash(password,10)
+        return new User(userName,hash,cards)
     }
 }
 exports.user = User

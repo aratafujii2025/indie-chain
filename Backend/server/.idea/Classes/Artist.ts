@@ -1,24 +1,27 @@
 import Card from './Card'
 const assert = require('assert')
+const bcrypt = require('bcrypt')
 export default class Artist{
-    userName :string;
-    password :string;
-    cards :Card[]
+    userName:string;
+    hash:string;
+    cards?:Card[]
 
 
-    constructor(userName?:string,password?:string) {
-        assert(userName != null)
-        assert(password != null)
+    private constructor(userName?,password?,cards?: Card[]){
         this.userName = userName
-        this.password = password
+        this.hash = password
+        this.cards = cards
     }
 
-    makeCard() {
-        console.log('card successfully made')
+    updateCards(cards:Card[]){
+        this.cards = cards;
     }
 
     static fromJson(json:Object) {
-        // To use, call artist.from with a json that has userName and password fields
         return Object.assign(new Artist(),json)
+    }
+    static async register(userName,password,cards?){
+        const hash = await bcrypt.hash(password,10)
+        return new Artist(userName,hash,cards)
     }
 }

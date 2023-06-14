@@ -21,8 +21,8 @@ const initDatabase = async () => {
     const ted = await User_1.default.register('ted', '123');
     const elk = await User_1.default.register('elk', '123');
     elk.updateCards([...cards]);
-    const sia = new Artist_1.default('sia', '123');
-    const taylor = new Artist_1.default('taylor', '123');
+    const sia = await Artist_1.default.register('sia', '123');
+    const taylor = await Artist_1.default.register('taylor', '123');
     users.push(JSON.stringify(suzie));
     users.push(JSON.stringify(frank));
     users.push(JSON.stringify(liz));

@@ -1,20 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var assert = require('assert');
-var Artist = /** @class */ (function () {
-    function Artist(userName, password) {
-        assert(userName != null);
-        assert(password != null);
+const assert = require('assert');
+const bcrypt = require('bcrypt');
+class Artist {
+    constructor(userName, password, cards) {
         this.userName = userName;
-        this.password = password;
+        this.hash = password;
+        this.cards = cards;
     }
-    Artist.prototype.makeCard = function () {
-        console.log('card successfully made');
-    };
-    Artist.fromJson = function (json) {
-        // To use, call artist.from with a json that has userName and password fields
+    updateCards(cards) {
+        this.cards = cards;
+    }
+    static fromJson(json) {
         return Object.assign(new Artist(), json);
-    };
-    return Artist;
-}());
+    }
+    static async register(userName, password, cards) {
+        const hash = await bcrypt.hash(password, 10);
+        return new Artist(userName, hash, cards);
+    }
+}
 exports.default = Artist;
