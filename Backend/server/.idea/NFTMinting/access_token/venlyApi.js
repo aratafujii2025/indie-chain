@@ -1,6 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var axios = require('axios');
 var qs = require('qs');
-var code = "";
+let code = "";
 var data = qs.stringify({
     'grant_type': 'client_credentials',
     'client_id': 'Testaccount-capsule',
@@ -16,13 +18,13 @@ var config = {
     data: data
 };
 axios(config)
-    .then(function (response) {
+    .then((response) => {
     code = response.data['access_token'];
     console.log(response.data);
     var fs = require('fs');
-    var json = JSON.stringify({ "access_token": code });
+    const json = JSON.stringify({ "access_token": code });
     console.log(json);
-    fs.writeFile('access_token.json', json, 'utf8', function () { });
+    fs.writeFile('access_token.json', json, 'utf8', () => { });
 })
     .catch(function (error) {
     console.log(error);
