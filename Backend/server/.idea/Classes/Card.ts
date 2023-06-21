@@ -1,6 +1,12 @@
 const assert = require('assert')
 const axios = require('axios')
 const fs = require('fs')
+const {  Sequelize, Op, Model, DataTypes } = require('sequelize');
+
+const sequelize = new Sequelize({
+    dialect: 'sqlite',
+    storage: './Database/database.sqlite'
+});
 
 export default class Card {
     name?:string;

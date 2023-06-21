@@ -2,17 +2,18 @@
 import Card from "./Card";
 const assert = require('assert')
 const bcrypt = require('bcrypt')
-export default class User {
-    userName:string;
-    hash:string;
-    cards?:Card[]
+const {  Sequelize, Op, Model, DataTypes } = require('sequelize');
+
+const sequelize = new Sequelize({
+    dialect: 'sqlite',
+    storage: './Database/database.sqlite'
+});
+export default class User extends Model {
+    declare userName:string;
+    declare hash:string;
+    declare email:string;
 
 
-    constructor(userName?,password?,cards?: Card[]){
-        this.userName = userName
-        this.hash = password
-        this.cards = cards
-    }
 
     updateCards(cards:Card[]){
         this.cards = cards;
@@ -23,7 +24,26 @@ export default class User {
     }
     static async register(userName,password,cards?){
         const hash = await bcrypt.hash(password,10)
-        return new User(userName,hash,cards)
+        return User.create({'userName':userName,'hash':hash,'cards':cards})
     }
 }
+
+User.init({
+    id:{
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    userName:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    hash:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    email:{
+        type:DataTypes.STRING
+    }
+},{sequelize,modelName:'User'})
 exports.user = User

@@ -2,12 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const assert = require('assert');
 const bcrypt = require('bcrypt');
-class User {
-    constructor(userName, password, cards) {
-        this.userName = userName;
-        this.hash = password;
-        this.cards = cards;
-    }
+const { Sequelize, Op, Model, DataTypes } = require('sequelize');
+const sequelize = new Sequelize({
+    dialect: 'sqlite',
+    storage: './Database/database.sqlite'
+});
+class User extends Model {
     updateCards(cards) {
         this.cards = cards;
     }
@@ -16,8 +16,26 @@ class User {
     }
     static async register(userName, password, cards) {
         const hash = await bcrypt.hash(password, 10);
-        return new User(userName, hash, cards);
+        return User.create({ 'userName': userName, 'hash': hash, 'cards': cards });
     }
 }
 exports.default = User;
+User.init({
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    userName: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    hash: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    email: {
+        type: DataTypes.STRING
+    }
+}, { sequelize, modelName: 'User' });
 exports.user = User;
