@@ -27,6 +27,61 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+
+h1 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 56px;
+  line-height: 61.6px;
+  font-weight: 400px;
+  
+  color: black;
+}
+
+h2 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 48px;
+  line-height: 52.8px;
+  font-weight: 400px;
+  
+  color: black;
+}
+
+h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: 400px;
+  
+  color: black;
+}
+
+h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 32px;
+  line-height: 35.2px;
+  font-weight: 400px;
+  
+  color: black;
+}
+
+h5 {
+  font-family: 'DM Sans', sans-serif;
+  font-size:24px;
+  line-height: 26.4px;
+  font-weight: 400px;
+  
+  color: black;
+}
+
+h6 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 400px;
+  
+  color: black;
+}
+
 @media (prefers-color-scheme: light) {
   body {
     color: #213547;

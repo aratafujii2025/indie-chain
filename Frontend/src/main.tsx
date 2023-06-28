@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "tailwindcss/tailwind.css";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Search from "./pages/Search";
 import "./index.css";
 import {
   BrowserRouter as Router,
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login></Login>,
+  },
+  {
+    path: "/search",
+    element: <Search></Search>,
   },
 ]);
 
