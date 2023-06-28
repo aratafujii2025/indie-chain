@@ -16,7 +16,7 @@ app.post("/login",async (req,res) => {
     await User.sync()
     const user = await User.findOne({where:{'userName':data.username}})
     if (!user){
-        res.json({'msg':'error'})
+        res.json({'msg':'could not find user'})
     } else {
         const passwordsMatch = await bcrypt.compare(data.password,user.hash)
         if (passwordsMatch){
@@ -27,6 +27,8 @@ app.post("/login",async (req,res) => {
     }
 
 })
+
+
 
 app.post("/register",async (req,res) => {
     let data = req.body

@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "nodeNext",
+  },
+  "include": [".idea/**/*"],
+  "exclude": ["node_modules"]
+}

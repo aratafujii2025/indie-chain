@@ -10,7 +10,7 @@ var data = qs.stringify({
 var config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'https://login-staging.arkane.network/auth/realms/Arkane/protocol/openid-connect/token',
+    url: 'https://login-staging.arkane.network/auth/realms/Arkane/protocol/openid-connect/token?',
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
     },
