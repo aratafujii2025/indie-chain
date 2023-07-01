@@ -6,20 +6,27 @@ export default {
     "./src/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    colors: {
-      // brand colors
-      'cream': '#EEE9E6',
-      'green': '#8CDBA9',
-      'navy': '#341294',
-      'pink': '#DAA6DB',
-      'baby-blue': '#A9D5F5',
-      'orange': '#F8B354',
-
-      // neutrals
-      'b1': '#000000',
-      'b2': '#1D1D1D',
-      'b3': '#282828',
-      'white': '#FFFFFF',
+    extend:{
+      colors: {
+        // brand colors
+        'cream': '#EEE9E6',
+        'green': '#8CDBA9',
+        'navy': '#341294',
+        'pink': '#DAA6DB',
+        'baby-blue': '#A9D5F5',
+        'orange': '#F8B354',
+  
+        // neutrals
+        'b1': '#000000',
+        'b2': '#1D1D1D',
+        'b3': '#282828',
+        'white': '#FFFFFF',
+      },
+      dropShadow: {
+        'text': 
+          ['0 4px 3px rgba(0, 0, 0, 0.5))', 
+          '0 2px 2px rgba(0, 0, 0, 0.5))']
+      },
     },
   },
   plugins: [],

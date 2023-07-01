@@ -1,8 +1,8 @@
-interface IHeader {
+interface IFooter {
 
 }
 
-const Header = ({}: IHeader) => {
+const Footer = ({}: IFooter) => {
     return (
         <div className="w-full h-[5vh] bg-gradient-to-br from-cream to-b3">
             
@@ -10,4 +10,4 @@ const Header = ({}: IHeader) => {
     )
 }
 
-export default Header
+export default Footer

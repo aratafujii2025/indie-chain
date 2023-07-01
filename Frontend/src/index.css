@@ -66,7 +66,7 @@ h4 {
 
 h5 {
   font-family: 'DM Sans', sans-serif;
-  font-size:24px;
+  font-size: 24px;
   line-height: 26.4px;
   font-weight: 400px;
   
@@ -87,4 +87,33 @@ h6 {
     color: #213547;
     background-color: #ffffff;
   }
+}
+
+/*
+.image-cropper {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.profile-pic {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
+*/
+
+.container {
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 260px
 }
