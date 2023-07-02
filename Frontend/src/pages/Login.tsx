@@ -1,21 +1,61 @@
-function Login() {
-    // make a branch called Login before you start developing
+import React, { useState } from 'react';
 
-    // https://tailwindcss.com/docs/font-size
+function LoginPage() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-    // tailwind.config.js edit colors as done before
-    // to use it would be like text-[colorname] or bg-[colorname]
-    return (
-        <div className="bg-purple-400 w-full h-full text-xl text-red-900">
-            <div className="bg">
-                <h1> <i>Welcome WOAHHHHHH</i></h1>
-                <h5>Continue with Google or enter your details.</h5>
-                <div className="bg-accent-lightgreen w-full h-10">
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
 
-                </div>
-            </div>
-        </div>  
-        );  
-    }
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
 
-export default Login;
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Perform login logic here with username and password
+    console.log('Login submitted:', username, password);
+    // Clear username and password fields after submission
+    setUsername('');
+    setPassword('');
+  };
+
+  return (
+    <div className="login-page">
+      <div className="login-container">
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="username">Username:</label>
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={handleUsernameChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+          </div>
+          <button type="submit">Login</button>
+          <div className="or-divider">
+            <hr />
+            <span>or</span>
+            <hr />
+          </div>
+          <button className="google-login">Sign in with Google</button>
+        </form>
+      </div>
+      <div className="gradient-background" />
+    </div>
+  );
+}
+
+export default LoginPage;
