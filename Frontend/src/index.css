@@ -33,3 +33,19 @@ body {
     background-color: #ffffff;
   }
 }
+
+.login-page {
+  display: flex;
+  height: 100vh;
+}
+
+.login-container {
+  flex: 1;
+  padding: 20px;
+  background-color: eggshell;
+}
+
+.gradient-background {
+  flex: 1;
+  background: linear-gradient(to right, #c1a6ff, #a6c1ff);
+}
