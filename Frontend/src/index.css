@@ -45,6 +45,8 @@ body {
   flex: 1;
   padding: 20px;
   background-color: #EEE9E6;
+  margin-top:50px;
+  margin-bottom:50px;
 }
 
 .gradient-background {
@@ -55,9 +57,12 @@ body {
 .black-italic-text {
   color: black;
   font-style: italic;
+  font-weight:bold; 
   display: inline;
   margin-top: 50px;
   font-size: 50px;
+  margin-bottom:1000px;
+  margin-right:10px;
 }
 
 .userpass{
@@ -73,9 +78,70 @@ font-size: 20px;
 }
 
 .googlelogin{
- color: "black";
- position: relative; /* or position: absolute or position: fixed */
- top: 20px; /* Adjust the top value to move the button away from the top edge */
- left: 150px; 
+  color: black;
+  position: relative; /* or position: absolute or position: fixed */
+  top: 20px; /* Adjust the top value to move the button away from the top edge */
+  left: 150px; 
 
+}
+
+.input-container {
+  margin-top:20px;
+  display: flex;
+  align-items: center;
+  margin-bottom:20px;
+}
+
+.icon {
+  margin-top:20px;
+  margin-right: 5px; 
+  color: black;
+}
+
+.input-field{
+  margin-top:10px;
+  border:none;
+  border-bottom: 1px solid darkgray;
+  padding: bottom 2px;
+  background-color:transparent;
+  color:black;
+
+} 
+
+.underline{
+position:absolute;
+left:0;
+bottom:0;
+width:100%;
+height:1px;
+background-color:darkgray;
+transition:width 0.3s ease;
+
+}
+
+.filled.underline{
+
+  width:0;
+}
+
+.divider {
+  display:flex;
+  align-items:center;
+  border: none;
+  border-top: 1px solid darkgray;
+  margin: 20px 0; /* Add margin above and below the divider */
+  height:0;
+}
+
+.divider-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: darkgray;
+  opacity: 0.5; /* Adjust the opacity as needed */
+}
+.or-text {
+  margin: 0 10px; /* Add margin to the "or" text */
+  color: darkgray;
+  font-weight: bold;
+  
 }
