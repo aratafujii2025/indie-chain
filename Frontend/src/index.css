@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 html, body {
   height: 100%;
   width: 100%;
@@ -42,10 +44,38 @@ body {
 .login-container {
   flex: 1;
   padding: 20px;
-  background-color: eggshell;
+  background-color: #EEE9E6;
 }
 
 .gradient-background {
   flex: 1;
   background: linear-gradient(to right, #c1a6ff, #a6c1ff);
+}
+
+.black-italic-text {
+  color: black;
+  font-style: italic;
+  display: inline;
+  margin-top: 50px;
+  font-size: 50px;
+}
+
+.userpass{
+color:black;
+display:inline;
+margin: top 50px;
+font-size: 20px;
+
+}
+
+.white-input {
+  background-color: #EEE9E6;
+}
+
+.googlelogin{
+ color: "black";
+ position: relative; /* or position: absolute or position: fixed */
+ top: 20px; /* Adjust the top value to move the button away from the top edge */
+ left: 150px; 
+
 }

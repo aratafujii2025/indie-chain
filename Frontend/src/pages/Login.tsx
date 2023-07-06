@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 (callback:any) => {<input type="text" /> }
+
+
+
 function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -24,21 +27,25 @@ function LoginPage() {
   return (
     <div className="login-page">
       <div className="login-container">
-        <h2>Login</h2>
+        <h5 style={{fontSize:"50px"}}></h5>
+        <h2 className="black-italic-text">Welcome Back</h2>
         <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="username">Username:</label>
+            <label className="userpass">Username:</label>
             <input
               type="text"
+              className="white-input"
               id="username"
               value={username}
               onChange={handleUsernameChange}
+              color="white"
             />
           </div>
           <div>
-            <label htmlFor="password">Password:</label>
+            <label className="userpass">Password:</label>
             <input
               type="password"
+              className="white-input"
               id="password"
               value={password}
               onChange={handlePasswordChange}
@@ -50,7 +57,7 @@ function LoginPage() {
             <span>or</span>
             <hr />
           </div>
-          <button className="google-login">Sign in with Google</button>
+          <button className="googlelogin">Sign in with Google</button>
         </form>
       </div>
       <div className="gradient-background" />
