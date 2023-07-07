@@ -31,6 +31,13 @@ function LoginPage() {
       <div className="login-container">
         <h5 style={{fontSize:"50px"}}></h5>
         <h2 className="black-italic-text">Welcome Back</h2>
+        <p className="subtext">Continue with Google or enter your details.</p>
+        <button className="google-signin-container">
+        <p className="google-signin-text">Sign in with Google</p>
+        </button>
+        <div className="divider">
+            <span className="or-text">or</span>
+        </div>
         <form onSubmit={handleSubmit}>
             <div className="input-container">
               <FontAwesomeIcon icon={faEnvelope} className="icon" />
@@ -55,9 +62,7 @@ function LoginPage() {
             <hr className={`underline ${username ? 'filled' : ''}`} />
           </div>
           <button type="submit">Login</button>
-          <div className="divider">
-            <span className="or-text">or</span>
-          </div>
+          
           <button className="googlelogin">Sign in with Google</button>
         </form>
       </div>
