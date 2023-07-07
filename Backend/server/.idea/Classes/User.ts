@@ -2,6 +2,11 @@ import Card from "./Card";
 const assert = require("assert");
 const bcrypt = require("bcrypt");
 const { Sequelize, Op, Model, DataTypes } = require("sequelize");
+const sqlite3 = require("sqlite3").verbose();
+let db = new sqlite3.Database("database.sqlite", sqlite3.OPEN_READWRITE);
+db.run(
+  "CREATE TABLE IF NOT EXISTS CardOwner(User varchar(255),CardHash int, Quantity int, primary key (User,CardHash));"
+);
 
 const sequelize = new Sequelize({
   dialect: "sqlite",
@@ -18,6 +23,19 @@ export default class User extends Model {
       return "a user exists with that name";
     }
     return User.create({ userName: userName, hash: hash, cards: cards });
+  }
+
+  getCards() {
+    const cardHashes = db.run(
+      `select CardHash from CardOwner where User == ${this.username};`
+    );
+    return Card.findAll({
+      where: {
+        hash: {
+          [Op.in]: cardHashes,
+        },
+      },
+    });
   }
 }
 

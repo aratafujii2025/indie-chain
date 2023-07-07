@@ -58,6 +58,15 @@ Card.init(
     contractDescription: {
       type: DataTypes.STRING,
     },
+    artistId: {
+      type: DataTypes.INTEGER,
+    },
+    tier: {
+      type: DataTypes.STRING,
+    },
+    collection: {
+      type: DataTypes.STRING,
+    },
   },
   { sequelize, modelName: "Card" }
 );
