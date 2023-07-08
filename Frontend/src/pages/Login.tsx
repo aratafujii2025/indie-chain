@@ -64,8 +64,10 @@ function LoginPage() {
           <button className="login-button-container">
             <button className="login-button">Login</button>
           </button>
-          
-          <button className="googlelogin">Sign in with Google</button>
+          <input type="checkbox" id="myCheckbox" />
+          <label htmlFor="myCheckbox">Remember me</label>
+
+         
         </form>
       </div>
       <div className="gradient-background" />
