@@ -105,6 +105,7 @@ font-size: 20px;
   padding: bottom 2px;
   background-color:transparent;
   color:black;
+  width:100%;
 
 } 
 
@@ -134,10 +135,12 @@ transition:width 0.3s ease;
 }
 
 .divider-line {
+  margin-top:50px;
   flex-grow: 1;
   height: 1px;
   background-color: darkgray;
   opacity: 0.5; /* Adjust the opacity as needed */
+  width:100%;
 }
 .or-text {
   margin: 0 10px; /* Add margin to the "or" text */
@@ -167,9 +170,33 @@ transition:width 0.3s ease;
   max-width:400px;
   margin-left:auto;
   margin-right:auto;
+  margin-bottom:50px;
 }
 
 .google-signin-text {
   color: black;
   font-weight: bold;
+}
+
+.login-button-container {
+  margin-top: 20px; /* Add margin-top to create space */
+  display: flex;
+  justify-content: center;
+}
+
+.login-button {
+  background-color: plum;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  border-radius:10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  width:80%;
+  max-width:400%;
+  margin-left:auto;
+  margin-right:auto;
+
+  /* Add any other desired styles for the login button */
 }

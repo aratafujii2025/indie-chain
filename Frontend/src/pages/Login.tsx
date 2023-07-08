@@ -61,7 +61,9 @@ function LoginPage() {
             />
             <hr className={`underline ${username ? 'filled' : ''}`} />
           </div>
-          <button type="submit">Login</button>
+          <button className="login-button-container">
+            <button className="login-button">Login</button>
+          </button>
           
           <button className="googlelogin">Sign in with Google</button>
         </form>
