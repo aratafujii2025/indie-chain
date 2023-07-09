@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 (callback:any) => {<input type="text" /> }
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faKey } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 function LoginPage() {
   const [username, setUsername] = useState('');
@@ -35,8 +35,10 @@ function LoginPage() {
         <button className="google-signin-container">
         <p className="google-signin-text">Sign in with Google</p>
         </button>
-        <div className="divider">
-            <span className="or-text">or</span>
+        <div className="container">
+          <div className="divider"></div>
+          <span className="or-text">OR</span>
+        <div className="divider"></div>
         </div>
         <form onSubmit={handleSubmit}>
             <div className="input-container">
@@ -44,6 +46,7 @@ function LoginPage() {
               <input
                 type="text"
                 id="username"
+                placeholder="Email"
                 value={username}
                 onChange={handleUsernameChange}
                 className="input-field"
@@ -51,10 +54,11 @@ function LoginPage() {
               <hr className={`underline ${username ? 'filled' : ''}`} />
           </div>
           <div className="input-container">
-            <FontAwesomeIcon icon={faUser} className="icon" />
+            <FontAwesomeIcon icon={faKey} className="icon" />
             <input
               type="password"
               id="password"
+              placeholder="Password"
               value={password}
               onChange={handlePasswordChange}
               className="input-field"
@@ -65,12 +69,38 @@ function LoginPage() {
             <button className="login-button">Login</button>
           </button>
           
-          <button className="googlelogin">Sign in with Google</button>
+          
         </form>
       </div>
       <div className="gradient-background" />
     </div>
   );
 }
+
+function InputFieldsPage() {
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
+  return (
+    <div className="password-input-container">
+      <input
+        type={passwordVisible ? 'text' : 'password'}
+        id="password"
+        name="password"
+        placeholder="Enter your password"
+      />
+      <span className="password-toggle" onClick={togglePasswordVisibility}>
+        <FontAwesomeIcon
+          icon={passwordVisible ? faEyeSlash : faEye}
+          id="password-toggle-icon"
+        />
+      </span>
+    </div>
+  );
+}
+
 
 export default LoginPage;
