@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
 }
@@ -20,7 +19,7 @@ body {
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #EEE9E6;
+  background-color: #eee9e6;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

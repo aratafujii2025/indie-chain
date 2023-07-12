@@ -1,30 +1,30 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var axios = require('axios');
-var qs = require('qs');
+var axios = require("axios");
+var qs = require("qs");
 let code = "";
 var data = qs.stringify({
-    'grant_type': 'client_credentials',
-    'client_id': 'Testaccount-capsule',
-    'client_secret': '82c19251-1753-44f5-ae76-93438d3628de'
+    grant_type: "client_credentials",
+    client_id: "Testaccount-capsule",
+    client_secret: "82c19251-1753-44f5-ae76-93438d3628de",
 });
 var config = {
-    method: 'post',
+    method: "post",
     maxBodyLength: Infinity,
-    url: 'https://login-staging.arkane.network/auth/realms/Arkane/protocol/openid-connect/token',
+    url: "https://login-staging.arkane.network/auth/realms/Arkane/protocol/openid-connect/token?",
     headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        "Content-Type": "application/x-www-form-urlencoded",
     },
-    data: data
+    data: data,
 };
 axios(config)
     .then((response) => {
-    code = response.data['access_token'];
+    code = response.data["access_token"];
     console.log(response.data);
-    var fs = require('fs');
-    const json = JSON.stringify({ "access_token": code });
+    var fs = require("fs");
+    const json = JSON.stringify({ access_token: code });
     console.log(json);
-    fs.writeFile('access_token.json', json, 'utf8', () => { });
+    fs.writeFile("access_token.json", json, "utf8", () => { });
 })
     .catch(function (error) {
     console.log(error);
