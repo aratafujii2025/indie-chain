@@ -4,6 +4,7 @@ import "tailwindcss/tailwind.css";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Search from "./pages/Search";
+import Following from "./pages/Following";
 import "./index.css";
 import {
   BrowserRouter as Router,
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
     path: "/search",
     element: <Search></Search>,
   },
+  {
+    path: "/following",
+    element: <Following></Following>,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

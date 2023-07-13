@@ -2,22 +2,18 @@ import * as React from 'react';
 import CaretDown from '../icons/CaretDown';
 import CaretUp from '../icons/CaretUp';
 
-function Dropdown(){
-    const menuOptions = [
-        "Most Popular", 
-        "Alphabetical",
-        "Newest", 
-        "Cards Available 🡑",
-        "Cards Available 🡓"
-    ];
+interface DropdownProps{
+    options: string[]
+}
 
+function Dropdown({options}: DropdownProps){
     const[isOpen, setOpen] = React.useState(false);
-    const[opt, setOpt] = React.useState(menuOptions[0]);
+    const[opt, setOpt] = React.useState(options[0]);
 
     return(
         <div className="mx-20 rounded-full">
             <button 
-                className="pl-4 bg-white bg-opacity-50 w-52 h-8 flex items-center justify-between rounded-full border-2 border-white"
+                className="pl-4 bg-white bg-opacity-75 w-52 h-8 flex items-center justify-between rounded-full border-2 border-white"
                 onClick={e => setOpen(!isOpen)}
             > 
                 {opt}
@@ -27,17 +23,19 @@ function Dropdown(){
             </button>
 
             {isOpen && (
-                <div className="mt-1 bg-white bg-opacity-50 flex flex-col rounded-xl p-1 top-14 w-52">
-                    {menuOptions.map(opt => {
-                        return (
-                            <h5 
-                            className="p-0.5 w-full hover:bg-white rounded-lg text-sm pl-4"
-                            onClick={e => {setOpt(opt); setOpen(false);}}
-                            >
-                                {opt}
-                            </h5>
-                        )})
-                    }
+                <div className="absolute mt-1 max-h-0 overflow-visible"> 
+                    <div className="bg-white bg-opacity-75 flex flex-col rounded-xl p-1 top-14 w-52">
+                        {options.map(opt => {
+                            return (
+                                <h5 
+                                className="p-0.5 w-full hover:bg-white rounded-lg text-sm pl-4"
+                                onClick={e => {setOpt(opt); setOpen(false);}}
+                                >
+                                    {opt}
+                                </h5>
+                            )})
+                        }
+                    </div>
                 </div>
             )}
 

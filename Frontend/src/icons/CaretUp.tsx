@@ -1,8 +1,8 @@
-interface IProps{
+interface CaretUpProps{
     color: string
 }
 
-function CaretUp(props: IProps){
+function CaretUp(props: CaretUpProps){
     const {color} = props;
 
     return(
