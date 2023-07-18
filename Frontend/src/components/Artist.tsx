@@ -11,7 +11,7 @@ function Artist() {
         <div className="relative">
             <img 
             //className="profile-pic"
-            className="absolute z-10 object-scale w-48 h-48 rounded-full shadow-md shadow-pink"
+            className="absolute z-10 w-48 h-48 rounded-full shadow-md shadow-pink"
             src="https://upload.wikimedia.org/wikipedia/en/b/bf/SZA_-_Ctrl_cover.png"
             alt="artist profile picture"
             />

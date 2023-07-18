@@ -3,7 +3,7 @@ interface IProps{
     arrowColor: string
 }
 
-function Arrow (props: IProps){
+function Arrow(props: IProps){
     const {bgColor, arrowColor} = props;
 
     return(

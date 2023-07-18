@@ -118,3 +118,11 @@ h6 {
   grid-auto-rows: 17rem
 }
 
+/*
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+*/

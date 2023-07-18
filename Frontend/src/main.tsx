@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Search from "./pages/Search";
 import Following from "./pages/Following";
+import Account from "./pages/Account/Account";
+import EditAccount from "./pages/Account/EditAccount";
 import "./index.css";
 import {
   BrowserRouter as Router,
@@ -28,7 +30,15 @@ const router = createBrowserRouter([
   {
     path: "/following",
     element: <Following></Following>,
-  }
+  },
+  {
+    path: "/account",
+    element: <Account></Account>,
+  },
+  {
+    path: "/account/edit",
+    element: <EditAccount></EditAccount>,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
