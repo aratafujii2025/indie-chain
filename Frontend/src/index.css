@@ -34,3 +34,208 @@ body {
     background-color: #ffffff;
   }
 }
+
+.login-page {
+  display: flex;
+  height: 100vh;
+}
+
+.login-container {
+  flex: 1;
+  padding: 20px;
+  background-color: #EEE9E6;
+  margin-top:50px;
+  margin-bottom:50px;
+}
+
+.gradient-background {
+  flex: 1;
+  background: linear-gradient(to right, #c1a6ff, #a6c1ff);
+}
+
+.black-italic-text {
+  color: black;
+  font-style: italic;
+  font-weight:bold; 
+  display: inline;
+  margin-top: 50px;
+  font-size: 50px;
+  margin-bottom:1000px;
+  margin-right:10px;
+}
+
+.userpass{
+color:black;
+display:inline;
+margin: top 50px;
+font-size: 20px;
+
+}
+
+.white-input {
+  background-color: #EEE9E6;
+}
+
+.googlelogin{
+  color: black;
+  position: relative; /* or position: absolute or position: fixed */
+  top: 20px; /* Adjust the top value to move the button away from the top edge */
+  left: 150px; 
+
+}
+
+.input-container {
+  margin-top:20px;
+  display: flex;
+  align-items: center;
+  margin-bottom:20px;
+  margin-top: 0px;
+  margin-left:10px;
+  font-size:20px;
+}
+
+.icon {
+  margin-top:15px;
+  margin-right: 20px; 
+  color: black;
+  size:50px;
+  
+}
+
+.input-field{
+  margin-top:10px;
+  border:none;
+  border-bottom: 1px solid darkgray;
+  padding: bottom 2px;
+  background-color:transparent;
+  color:black;
+  width:100%;
+
+} 
+
+.underline{
+position:absolute;
+left:0;
+bottom:0;
+width:100%;
+height:1px;
+background-color:darkgray;
+transition:width 0.3s ease;
+
+}
+
+.filled.underline{
+
+  width:0;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider {
+  flex-grow: 1;
+  height: 1px;
+  background-color: black;
+  margin: 0 10px;
+}
+
+.or-text {
+  font-weight: normal;
+}
+
+
+.divider-line {
+  margin-top:50px;
+  flex-grow: 1;
+  height: 1px;
+  background-color: black;
+  opacity: 0.5; /* Adjust the opacity as needed */
+  width:100%;
+}
+.or-text {
+  margin: 0 10px; /* Add margin to the "or" text */
+  color: black;
+  font-weight: normal;
+  font-style:italic;
+  font-size:12px;
+  
+}
+
+.subtext {
+  font-size: 14px; /* Adjust the font size as needed */
+  font-style:italic;
+  color: black;
+  margin-bottom: 20px; /* Add space below the subtext */
+  margin-right: 20px;
+  margin-top:10px;
+}
+
+.google-signin-container {
+  padding: 10px 20px; /* Adjust the padding as needed */
+  background-color: white;
+  margin-top: 50px; /* Add margin-top to create space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:10px;
+  width:80%;
+  max-width:400px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:50px;
+}
+
+.google-signin-text {
+  color: black;
+  font-weight: normal;
+}
+
+.login-button-container {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-button {
+  background-color: plum;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius:10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  width:80%;
+  max-width:400%;
+  margin-left:auto;
+  margin-right:auto;
+
+  /* Add any other desired styles for the login button */
+}
+
+.password-input-container {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+#password-toggle-icon {
+  color: black;
+}
+
+.input-field::placeholder {
+  color: black;
+  font-size: 13px;
+}
