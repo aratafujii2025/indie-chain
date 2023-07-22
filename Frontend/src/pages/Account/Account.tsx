@@ -1,3 +1,4 @@
+import {useNavigate} from 'react-router-dom';
 import Header from '../../components/Header';
 import Edit from '../../icons/Edit';
 import Copy from '../../icons/Copy';
@@ -10,12 +11,19 @@ interface dtProps{
 function DisplayText(props: dtProps) {
     const {label, text} = props;
 
+    var textColor:string = "text-b3";
+    if(label === "Phone"){
+        textColor = "text-silver-dark";
+    }
+
+    var textClassName:string = textColor.concat(" inline-block pl-2");
+
     return (
         <div className="mb-2">
-            <div className="inline-block pl-4 pr-8 text-silver-dark">
+            <div className="inline-block pl-4 pr-8 text-b3">
                 {label}
             </div>
-            <div className="inline-block text-b3 px-2">
+            <div className={textClassName}>
                 {text} 
             </div>
         </div>
@@ -26,6 +34,12 @@ function DisplayText(props: dtProps) {
 // copy icon not showing, could display full metamask address
 // w-2/3 h-4/5
 function Account() {
+    const navigate = useNavigate();
+
+    const navEdit = () => {
+        navigate('/account/edit');
+    }
+
     return (
         <div className="bg-cream w-full h-full overflow-auto flex flex-nowrap flex-col">
             <Header/>            
@@ -41,7 +55,7 @@ function Account() {
                     />
                 </div>
 
-                <div className="inline-block w-7 h-7 ml-[17rem] -mb-2 opacity-50"> 
+                <div onClick={navEdit} className="inline-block w-7 h-7 ml-[17rem] -mb-2 opacity-50"> 
                     <Edit />
                 </div>
 
@@ -60,7 +74,7 @@ function Account() {
                             <DisplayText label={"Last Name"} text={"Grant"}/>
 
                             <DisplayText label={"Email"} text={"elizabeth.grant@gmail.com"}/>
-                            <DisplayText label={"Phone"} text={"+00 12 34 56 78 99"}/>
+                            <DisplayText label={"Phone"} text={"Coming Soon!"}/>
                         </div>
                     </div>
 
@@ -68,7 +82,6 @@ function Account() {
                         <h4 className="italic font-semibold mb-4">Details</h4>
                         <DisplayText label={"Arpeggio User ID"} text={"0123"}/>
                         <DisplayText label={"MetaMask Address"} text={"0xa12b3 . . . qp9q6"}/>
-                        <Copy/>
                     </div>
                 </div>
             </div>

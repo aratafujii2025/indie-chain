@@ -21,6 +21,7 @@ export default {
         'silver-light': '#DDDDDD',
         'bronze-dark': '#7A4700',
         'bronze-light': '#C27000',
+        'button-grey': '#F6F6F6',
   
         // neutrals
         'b1': '#000000',

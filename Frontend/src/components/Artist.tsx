@@ -3,7 +3,7 @@ import Arrow from '../icons/Arrow';
 // add interface, props
 // pass in url to artist photo and artist name
 
-// randomize gradient color, choose from brand colors (including b3)
+// randomize gradient color, choose from brand colors and black
 
 function Artist() {
     return(
@@ -11,12 +11,12 @@ function Artist() {
         <div className="relative">
             <img 
             //className="profile-pic"
-            className="absolute z-10 w-48 h-48 rounded-full shadow-md shadow-pink"
+            className="absolute z-10 w-48 h-48 rounded-full shadow-b3"
             src="https://upload.wikimedia.org/wikipedia/en/b/bf/SZA_-_Ctrl_cover.png"
             alt="artist profile picture"
             />
 
-            <div className="absolute top-24 pt-24 pl-3 z-0 bg-gradient-to-br from-pink from-40% to-pink-opacity-0 to-85% w-48 h-34 rounded-b-3xl">
+            <div className="absolute shadow-xl top-24 pt-24 pl-3 z-0 bg-gradient-to-br from-b3 from-40% to-b3-opacity-0 to-90% w-48 h-34 rounded-b-3xl">
                 <>
                     <span className="inline-block">
                         <h4 className="text-white text-ellipsis overflow-hidden drop-shadow-text">SZA</h4>

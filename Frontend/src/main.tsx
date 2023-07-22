@@ -7,6 +7,8 @@ import Search from "./pages/Search";
 import Following from "./pages/Following";
 import Account from "./pages/Account/Account";
 import EditAccount from "./pages/Account/EditAccount";
+import Verify from "./pages/Account/Verify";
+import OTC from "./pages/Account/OTC";
 import "./index.css";
 import {
   BrowserRouter as Router,
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
   {
     path: "/account/edit",
     element: <EditAccount></EditAccount>,
+  },
+  {
+    path: "/account/edit/verify",
+    element: <Verify></Verify>,
+  },
+  {
+    path: "/account/edit/OTC",
+    element: <OTC></OTC>,
   },
 ]);
 
