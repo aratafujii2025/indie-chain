@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import MyCardsPage from "./pages/MyCardsPage";
 import "./index.css";
 import "./styles.css";
+import "./pages/RoundedCard";
 
 import {
   BrowserRouter as Router,

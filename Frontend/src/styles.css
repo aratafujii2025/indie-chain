@@ -1,3 +1,4 @@
+
 .bg-cream {
   background-color: eggshell;
 }
@@ -186,4 +187,31 @@ button.ml-4 {
   max-width:500px;
   flex-grow:1;
   border-color:black;
+}
+
+.rounded-card {
+  width: 120px; /* Adjust the card width as per your preference */
+  height: 150px; /* Adjust the card height as per your preference */
+  border-radius: 15px;
+  background-color: gray;
+  margin: 0 10px;
+  transition: transform 0.3s, opacity 0.3s, cursor 0.3s;
+  cursor: pointer;
+}
+
+.selected {
+  transform: scale(1.2); /* Increase the size of the selected card */
+}
+
+.not-selected {
+  transform: scale(0.8); /* Decrease the size of not-selected cards */
+  opacity: 0.5; /* Set opacity to make them semi-transparent */
+  cursor: default; /* Change cursor to default for not-selected cards */
+}
+
+
+.carousel-inner {
+  display: flex;
+  overflow-x: scroll; /* Enable horizontal scrolling */
+  gap: 10px; /* Adjust the gap between cards */
 }
