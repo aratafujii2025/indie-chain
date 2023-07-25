@@ -25,9 +25,13 @@ function LoginPage() {
 
   const handleLogin = (event: React.FormEvent) => {
     event.preventDefault();
+    let x = 1;
     axios
       .post(API_URL + "login", { username: username, password: password })
-      .then((result) => console.log("success"));
+      .then((result) => console.log("success"))
+      .catch((error) => {
+        console.log(error);
+      });
     setUsername("");
     setPassword("");
   };

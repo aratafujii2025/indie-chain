@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const port = 3000;
 import { updateDatabase } from "./Database/UpdateDatabase";
+import { sendEmail } from "./utils/sendEmail";
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
@@ -49,6 +50,18 @@ app.post("/create", async (req, res) => {
   await Card.sync();
   await Card.makeNft(data);
   res.json({ msg: "success" });
+});
+
+app.post("/email", (req, res) => {
+  let data = req.body;
+  if (sendEmail(data["subject"], data["to"], data["content"])) {
+    res.status(400);
+    res.json({
+      msg: "there was an error sending the email, please try again later",
+    });
+  } else {
+    res.json({ msg: "email sent" });
+  }
 });
 
 app.listen(port, () => {
