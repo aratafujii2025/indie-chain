@@ -1,16 +1,16 @@
 import Exit from '../../icons/Exit';
-import {useNavigate} from 'react-router-dom';
 
-function Verify(){
-    const navigate = useNavigate();
-    const navOTC = () => {
-        navigate('/account/edit/otc');
-    }
+interface vProps {
+    visible: boolean
+    setVisible: React.Dispatch<React.SetStateAction<boolean>>
+    setNext: React.Dispatch<React.SetStateAction<boolean>>
+}
 
+function Verify(props: vProps){
     return(
-        <div className="bg-black bg-opacity-50 w-full h-full justify-center items-center flex">
+        <div className="bg-black bg-opacity-25 backdrop-blur-sm w-full h-full justify-center items-center flex">
             <div className= "bg-white rounded-3xl w-[36rem] h-[20rem]">
-                <div className="ml-[32.5rem] mt-7">
+                <div onClick={() => props.setVisible(false)} className="ml-[32.5rem] mt-7">
                     <Exit color="#A9A9A9"/>
                 </div>
 
@@ -36,7 +36,11 @@ function Verify(){
                     </div>
                 </>
 
-                <div className="ml-96 bg-button-grey w-32 h-8 rounded-full text-b3 font-semibold flex items-center justify-center">
+                <div onClick={() => {
+                    props.setNext(true)
+                    props.setVisible(false)
+                }}
+                    className="ml-96 cursor-pointer bg-button-grey w-32 h-8 rounded-full text-b3 font-semibold flex items-center justify-center">
                     Send
                 </div>
 

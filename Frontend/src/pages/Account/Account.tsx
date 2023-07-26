@@ -2,35 +2,8 @@ import {useNavigate} from 'react-router-dom';
 import Header from '../../components/Header';
 import Edit from '../../icons/Edit';
 import Copy from '../../icons/Copy';
+import DisplayText from '../../components/DisplayText';
 
-interface dtProps{
-    label: string
-    text: string
-}
-
-function DisplayText(props: dtProps) {
-    const {label, text} = props;
-
-    var textColor:string = "text-b3";
-    if(label === "Phone"){
-        textColor = "text-silver-dark";
-    }
-
-    var textClassName:string = textColor.concat(" inline-block pl-2");
-
-    return (
-        <div className="mb-2">
-            <div className="inline-block pl-4 pr-8 text-b3">
-                {label}
-            </div>
-            <div className={textClassName}>
-                {text} 
-            </div>
-        </div>
-    )
-}
-
-// header not showing
 // copy icon not showing, could display full metamask address
 // w-2/3 h-4/5
 function Account() {
@@ -42,7 +15,7 @@ function Account() {
 
     return (
         <div className="bg-cream w-full h-full overflow-auto flex flex-nowrap flex-col">
-            <Header/>            
+            <div> <Header/> </div>        
             <h1 className="text-b3 left font-bold italic mx-16 my-5">Account</h1>
 
             <div className="bg-white w-[64rem] h-[50rem] rounded-3xl mb-10 ml-52">
@@ -62,26 +35,26 @@ function Account() {
                 <div className="flex flex-nowrap flex-col items-center mb-6">
                     <div className="py-4 px-6 mb-2 w-[50rem] h-36 mt-2 rounded-3xl border-2 border-silver-light">
                         <h4 className="italic font-semibold mb-4">Profile</h4>
-                        <DisplayText label={"Username"} text={"lizgran28"}/>
-                        <DisplayText label={"Password"} text={"••••••••••••••••"}/>
+                        <DisplayText label={"Username"} text={"lizgran28"} color="b3"/>
+                        <DisplayText label={"Password"} text={"••••••••••••••••"} color="b3"/>
                     </div>
 
                     <div className="py-4 px-6 mb-2 w-[50rem] h-36 mt-2 rounded-3xl border-2 border-silver-light">
                         <h4 className="italic font-semibold mb-4">Personal</h4>
                         
                         <div className="columns-2">
-                            <DisplayText label={"First Name"} text={"Elizabeth"}/>
-                            <DisplayText label={"Last Name"} text={"Grant"}/>
+                            <DisplayText label={"First Name"} text={"Elizabeth"} color="b3"/>
+                            <DisplayText label={"Last Name"} text={"Grant"} color="b3"/>
 
-                            <DisplayText label={"Email"} text={"elizabeth.grant@gmail.com"}/>
-                            <DisplayText label={"Phone"} text={"Coming Soon!"}/>
+                            <DisplayText label={"Email"} text={"elizabeth.grant@gmail.com"} color="b3"/>
+                            <DisplayText label={"Phone"} text={"Coming Soon!"} color="silver-dark"/>
                         </div>
                     </div>
 
                     <div className="py-4 px-6 mb-2 w-[50rem] h-36 mt-2 rounded-3xl border-2 border-silver-light">
                         <h4 className="italic font-semibold mb-4">Details</h4>
-                        <DisplayText label={"Arpeggio User ID"} text={"0123"}/>
-                        <DisplayText label={"MetaMask Address"} text={"0xa12b3 . . . qp9q6"}/>
+                        <DisplayText label={"Arpeggio User ID"} text={"0123"} color="b3"/>
+                        <DisplayText label={"MetaMask Address"} text={"0xa12b3 . . . qp9q6"} color="b3"/>
                     </div>
                 </div>
             </div>

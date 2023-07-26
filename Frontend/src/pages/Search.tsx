@@ -6,9 +6,9 @@ import Artist from '../components/Artist';
 function Search() {
     // branch called searchPage
     const menuOptions = [
+        "Newest",
         "Most Popular", 
         "Alphabetical",
-        "Newest", 
         "Cards Available 🡑",
         "Cards Available 🡓"
     ];
