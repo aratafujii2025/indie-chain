@@ -29,11 +29,6 @@ export default {
         'b3': '#282828',
         'white': '#FFFFFF',
       },
-      dropShadow: {
-        'text': 
-          ['0 4px 3px rgba(0, 0, 0, 0.5))', 
-          '0 2px 2px rgba(0, 0, 0, 0.5))'],
-      },
     },
   },
   plugins: [],

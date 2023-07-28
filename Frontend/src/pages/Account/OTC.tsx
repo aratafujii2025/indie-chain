@@ -1,4 +1,5 @@
 import * as React from 'react';
+import axios from "axios";
 import Exit from '../../icons/Exit';
 
 interface OTCProps {
@@ -9,9 +10,21 @@ interface OTCProps {
 }
 
 function OTC(props: OTCProps){
-    const code:string = "123456";
+    //const code:string = "123456";
+    const [code, setCode] = React.useState("");
     const [userInput, setUserInput] = React.useState("");
     const [tries, setTries] = React.useState(3);
+
+    const API_URL = "http://localhost:5173/";
+    async function getCode(){
+        try{
+            const response = await axios.get(API_URL);
+            setCode(response.data.emailCode.toString());
+        }catch(error){
+            console.log(error);
+        }
+    }
+    getCode();
 
     return(
         <div className="bg-black bg-opacity-25 backdrop-blur-sm w-full h-full justify-center items-center flex">
@@ -26,7 +39,7 @@ function OTC(props: OTCProps){
                     <label className="text-3xl p-10">
                         <input 
                         onChange={(e) => setUserInput(e.target.value)}
-                        className="outline-none text-center text-5xl w-80" placeholder="Enter Code" autoComplete="one-time-code" type="text" name="usercode" autoFocus={true} alt="enter one time use code"/>
+                        className="outline-none text-center text-5xl w-80" value={userInput} placeholder="Enter Code" autoComplete="one-time-code" type="text" name="usercode" autoFocus={true} alt="enter one time use code"/>
                     </label>
                 </div>
 
@@ -49,13 +62,13 @@ function OTC(props: OTCProps){
                             props.setVisible(false);
                         }else{
                             setTries(tries - 1);
-                            setUserInput("");
                         }
                     }else{
                         props.setPrev(true);
                         props.setVisible(false);
                         setTries(3);
                     }
+                    setUserInput("");
                 }} 
                 className="ml-96 cursor-pointer bg-button-grey w-32 h-8 rounded-full text-b3 font-semibold flex items-center justify-center">
                     Verify

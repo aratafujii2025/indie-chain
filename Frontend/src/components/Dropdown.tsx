@@ -3,17 +3,19 @@ import CaretDown from '../icons/CaretDown';
 import CaretUp from '../icons/CaretUp';
 
 interface DropdownProps{
-    options: string[]
+    options: Array<{id:string, display:string}>
+    setFilter: React.Dispatch<React.SetStateAction<string>>
 }
 
-function Dropdown({options}: DropdownProps){
+function Dropdown(props: DropdownProps){
+    const {options, setFilter} = props;
     const[isOpen, setOpen] = React.useState(false);
-    const[opt, setOpt] = React.useState(options[0]);
+    const[opt, setOpt] = React.useState(options[0].display);
 
     return(
         <div className="mx-20 rounded-full">
             <button 
-                className="pl-4 bg-white bg-opacity-75 w-52 h-8 flex items-center justify-between rounded-full border-2 border-white"
+                className="pl-4 bg-white bg-opacity-70 w-52 h-8 flex items-center justify-between rounded-full border-2 border-white"
                 onClick={e => setOpen(!isOpen)}
             > 
                 {opt}
@@ -29,9 +31,12 @@ function Dropdown({options}: DropdownProps){
                             return (
                                 <h5 
                                 className="p-0.5 w-full hover:bg-white rounded-lg text-sm pl-4"
-                                onClick={e => {setOpt(opt); setOpen(false);}}
-                                >
-                                    {opt}
+                                onClick={() => {
+                                    setOpt(opt.display); 
+                                    setFilter(opt.id);
+                                    setOpen(false);
+                                }}>
+                                    {opt.display}
                                 </h5>
                             )})
                         }
