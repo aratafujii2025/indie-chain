@@ -17,13 +17,15 @@ export const sendEmail = async (to: string, message, subject) => {
     subject: subject,
     text: message,
   };
-
+  let to_error = false;
   transporter.sendMail(mailOptions, function (error, info) {
+    to_error = true ? error : false;
     if (error) {
       console.log(error);
     } else {
       console.log("Email sent: " + info.response);
     }
   });
+  return to_error;
 };
 sendEmail("littlejsilva@gmail.com", "hi", "summary");

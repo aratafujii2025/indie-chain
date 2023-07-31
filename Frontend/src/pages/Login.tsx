@@ -10,6 +10,7 @@ function LoginPage() {
   const [password, setPassword] = useState('');
 
   const handleUsernameChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+    target: { value: React.SetStateAction<string> };
     setUsername(event.target.value);
   };
 
@@ -36,39 +37,44 @@ function LoginPage() {
         <p className="google-signin-text">Sign in with Google</p>
         </button>
         <div className="container">
-          <form onSubmit={handleSubmit}>
-              <div className="input-container">
-                <FontAwesomeIcon icon={faEnvelope} className="icon" />
-                <input
-                  type="text"
-                  id="username"
-                  placeholder="Email"
-                  value={username}
-                  onChange={handleUsernameChange}
-                  className="input-field"
-                />
-                <hr className={`underline ${username ? 'filled' : ''}`} />
-            </div>
-            <div className="input-container">
-              <FontAwesomeIcon icon={faKey} className="icon" />
-              <input
-                type="password"
-                id="password"
-                placeholder="Password"
-                value={password}
-                onChange={handlePasswordChange}
-                className="input-field"
-              />
-              <hr className={`underline ${username ? 'filled' : ''}`} />
-            </div>
-            <button className="login-button-container">
-              <button className="login-button">Login</button>
-            </button>
-            
-            
-          </form>
+          <div className="divider"></div>
+          <span className="or-text">OR</span>
+          <div className="divider"></div>
         </div>
-        
+        <form onSubmit={(e) => e.preventDefault()}>
+          <div className="input-container">
+            <FontAwesomeIcon icon={faEnvelope} className="icon" />
+            <input
+              type="text"
+              id="username"
+              placeholder="Email"
+              value={username}
+              onChange={handleUsernameChange}
+              className="input-field"
+            />
+            <hr className={`underline ${username ? "filled" : ""}`} />
+          </div>
+          <div className="input-container">
+            <FontAwesomeIcon icon={faKey} className="icon" />
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              value={password}
+              onChange={handlePasswordChange}
+              className="input-field"
+            />
+            <hr className={`underline ${username ? "filled" : ""}`} />
+          </div>
+          <button className="login-button-container">
+            <button className="login-button" onClick={handleLogin}>
+              Login
+            </button>
+            <button className="login-button" onClick={handleRegister}>
+              Register
+            </button>
+          </button>
+        </form>
       </div>
       <div className="gradient-background" />
     </div>
