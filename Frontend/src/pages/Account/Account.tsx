@@ -42,7 +42,15 @@ function Account() {
             <h1 className="text-b3 left font-bold italic mx-16 my-5">Account</h1>
 
             <div className="bg-white w-[64rem] h-[50rem] rounded-3xl mb-10 ml-52">
-                <div className="inline-block ml-28 mr-2 mt-6">
+                <div className="w-1 h-1 bg-transparent bg-opacity-0 ml-[36rem]">
+                    <button 
+                        onClick={()=>""}
+                        className="bg-pink w-80 h-9 rounded-full text-center text-white mt-8">
+                            Reconnect Wallet
+                    </button>
+                </div>
+                
+                <div className="inline-block ml-28 mr-2 mt-5">
                     <img 
                         className="w-36 h-36 rounded-full"
                         src={user.url}
@@ -50,17 +58,14 @@ function Account() {
                     />
                 </div>
 
-                <div className="inline-block h-32">
-                    <h3 className="font-semibold italic mt-20 pt-2">Hi {user.firstName}</h3>
+                <div className="inline-block w-[35rem]">
+                    <h3 className="font-semibold italic pt-2">Hi {user.firstName}</h3>
                 </div>
 
-                <div className="inline-block h-32 bg-black">
-                    <button 
-                    onClick={()=>""}
-                    className="bg-pink w-80 h-9 rounded-full text-center text-white">
-                        Reconnect Wallet
-                    </button>
-                    <div onClick={navEdit} className="w-7 h-7 ml-10 -mb-2 opacity-50"> 
+                <div className="inline-block">
+                    <div 
+                    onClick={navEdit} 
+                    className="w-7 h-7 ml-10 -mb-2 opacity-50 mt-20"> 
                         <Edit />
                     </div>
                 </div>

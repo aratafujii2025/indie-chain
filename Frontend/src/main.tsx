@@ -7,7 +7,9 @@ import Search from "./pages/Search";
 import Following from "./pages/Following";
 import Account from "./pages/Account/Account";
 import EditAccount from "./pages/Account/EditAccount";
-import ChangePw from "./pages/Account/ChangePw";
+import Artist from "./pages/Dashboard/Artist";
+import Supporter
+ from "./pages/Dashboard/Supporter";
 import "./index.css";
 import {
   BrowserRouter as Router,
@@ -41,9 +43,13 @@ const router = createBrowserRouter([
     element: <EditAccount></EditAccount>,
   },
   {
-    path: "/account/change",
-    element: <ChangePw visible={true} setVisible={()=>""} username=""></ChangePw>
+    path: "/dashboard/artist",
+    element: <Artist></Artist>,
   },
+  {
+    path: "/dashboard/supporter",
+    element: <Supporter></Supporter>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

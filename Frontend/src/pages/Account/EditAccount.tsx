@@ -83,31 +83,45 @@ function EditAccount() {
                 <h1 className="text-b3 left font-bold italic mx-16 my-5">Account</h1>
 
                 <div className="bg-white w-[64rem] h-[50rem] rounded-3xl mb-10 ml-52">
-                    <div className="inline-block w-96 mr-9 opacity-0"/>
-                    <div className="inline-block">
-                        <div className="relative pt-6 pb-1 px-6">
+                    <div className="w-1 h-1 bg-transparent bg-opacity-0 ml-[36rem]">
+                        <button 
+                            onClick={()=>""}
+                            className="bg-pink/50 w-80 h-9 rounded-full text-center text-white mt-8">
+                                Reconnect Wallet
+                        </button>
+                    </div>
+                
+                    <div className="inline-block ml-28 mr-2 mt-5">
+                        <div className="relative z-20 bg-transparent bg-opacity-0 w-1 h-1">
+                            <div className="absolute top-14 left-14">
+                                <Upload color="#FFFFFFF"/>
+                            </div>
+                        </div>
+                        <div className="-mt-1">
                             <img 
                                 className="w-36 h-36 rounded-full opacity-60"
                                 src={user.url}
                                 alt="user profile picture"
                             />
                         </div>
-
-                        <div className="relative z-20 -mt-[5.5rem] ml-[5rem] mb-[3.7rem]">
-                            <Upload color="#FFFFFFF"/>
+                        <div>
                         </div>
                     </div>
 
-                    <button 
-                    onClick={()=> {
-                        send(user.id, newUsername, newEmail);
-                        navAcc();
-                    }}
-                    type="submit" 
-                    className="inline-block w-7 h-7 ml-[17rem] -mb-2 opacity-50"> 
-                        Save
-                    </button>
+                    <div className="inline-block w-[35rem]">
+                        <h3 className="font-semibold italic pt-2">Hi {user.firstName}</h3>
+                    </div>
 
+                    <button 
+                        onClick={()=> {
+                            send(user.id, newUsername, newEmail);
+                            navAcc();
+                        }}
+                        type="submit" 
+                        className="inline-block w-7 h-7 ml-10 -mb-2 opacity-50"> 
+                            Save
+                    </button>
+ 
                     <div className="flex flex-nowrap flex-col items-center mb-6">
                         <div className="py-4 px-6 mb-2 w-[50rem] h-36 mt-2 rounded-3xl border-2 border-silver-light">
                             <h4 className="italic font-semibold mb-4">Profile</h4>
@@ -155,7 +169,7 @@ function EditAccount() {
                             <DisplayText label={"MetaMask Address"} text={user.mmAddr} color="silver-dark"/>
                         </div>
                     </div>
-                </div>
+               </div> 
             </div>
 
             <div className={verifyClass}>
