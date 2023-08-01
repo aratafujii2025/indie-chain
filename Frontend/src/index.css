@@ -50,7 +50,7 @@ body {
 
 .gradient-background {
   flex: 1;
-  background: #EEE9E6;
+  background-color:#eee9e6;
 }
 
 .black-italic-text {
@@ -58,47 +58,27 @@ body {
   font-style: italic;
   font-weight:bold; 
   display: inline;
-  margin-top: 50px;
+  margin-top: 250px;
   font-size: 50px;
-  margin-bottom:1000px;
+  margin-bottom:50px;
   margin-right:10px;
+  margin-left:30px;
+  top:30%;
 }
 
 .userpass{
-color:white;
+color:rgb(255, 255, 255);
 display:inline;
 margin: top 50px;
 font-size: 20px;
 
 }
 
-.container{
-background-color:white;
-margin-left:30px;
-margin-left:30px;
-margin-top:100px;
-border-radius:30px;
-flex:1;
-
-
-}
-
 .white-input {
-  background-color: white;
-}
-
-.googlelogin{
-  color: black;
-  position: relative; /* or position: absolute or position: fixed */
-  top: 20px; /* Adjust the top value to move the button away from the top edge */
-  left: 150px; 
-
+  background-color: #EEE9E6;
 }
 
 .input-container {
-  flex: 1;
-  padding: 10px;
-  border-radius: 20px;
   margin-top:20px;
   display: flex;
   align-items: center;
@@ -106,26 +86,30 @@ flex:1;
   margin-top: 0px;
   margin-left:10px;
   font-size:20px;
-  background-color: black;
+  background-color:rgb(255, 255, 255);
 }
 
 .icon {
   margin-top:15px;
   margin-right: 20px; 
-  color: #EEE9E6;
+  color: rgb(255, 255, 255);
   size:50px;
   
 }
 
 .input-field{
-  margin-top:10px;
-  border:none;
-  border-bottom: 1px solid darkgray;
-  padding: bottom 2px;
-  background-color:transparent;
-  color:white;
-  width:100%;
-
+  background-color: black;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius:10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  width:400px;
+  max-width:400%;
+  margin-left:30px;
+  margin-right:80px;
 } 
 
 .underline{
@@ -143,19 +127,16 @@ transition:width 0.3s ease;
 
   width:0;
 }
-
-
-.divider {
-  flex-grow: 1;
-  height: 1px;
-  background-color: black;
-  margin: 0 10px;
+.whitecontainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:white;
+  margin-top:80px;
+  height:70%;
+  border-radius:30px;
+  margin-left:30px;
 }
-
-.or-text {
-  font-weight: normal;
-}
-
 
 .divider-line {
   margin-top:50px;
@@ -222,10 +203,10 @@ transition:width 0.3s ease;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  width:80%;
+  width:400px;
   max-width:400%;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left:60px;
+  margin-right:80px;
 
   /* Add any other desired styles for the login button */
 }
@@ -249,4 +230,15 @@ transition:width 0.3s ease;
 .input-field::placeholder {
   color: black;
   font-size: 13px;
+}
+
+.rounded-circle {
+  width: 350px;
+  height: 350px;
+  background-color: gray; /* Purple color for the circle */
+  border-radius: 50%;
+  position: absolute;
+  right: 70px;
+  top: 55%;
+  transform: translateY(-50%);
 }
