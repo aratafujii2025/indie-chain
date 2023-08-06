@@ -7,6 +7,8 @@ import MyCardsPage from "./pages/MyCardsPage";
 import "./index.css";
 import "./styles.css";
 import "./pages/RoundedCard";
+import Register from "./pages/Register";
+import "./resgisterstyle.css";
 
 import {
   BrowserRouter as Router,
